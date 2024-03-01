@@ -16,6 +16,8 @@ services:
     container_name: node
     build: 
       context: ./node
+    volumes: 
+      - ./node:/usr/src/app
     restart: always
     tty: true
     depends_on:
