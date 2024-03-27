@@ -1,11 +1,9 @@
-FROM node:alpine AS builder
+FROM node:18-slim
 
-WORKDIR /app
+RUN apt-get update && apt-get install wget -y
 
-COPY . .
+USER node
 
-RUN npm install
+WORKDIR /usr/src/app
 
 EXPOSE 3000
-
-CMD [ "node", "index.js" ]

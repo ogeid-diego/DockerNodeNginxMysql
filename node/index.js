@@ -14,7 +14,7 @@ const mysql = require('mysql')
 const connection = mysql.createConnection(config)
 
 app.get('/', (req, res) => {
-  const name = "Diego"
+  const name = "Diego FullCycle"
 
   connection.query(`INSERT INTO people (nome) VALUES ('${name}')`)
 

@@ -13,13 +13,14 @@ services:
       - node
   
   node:
-    container_name: node
     build: 
       context: ./node
+    container_name: node
+    tty: true
+    entrypoint: sh -c "npm install && node index.js"
     volumes: 
       - ./node:/usr/src/app
     restart: always
-    tty: true
     depends_on:
       db:
         condition: service_healthy
